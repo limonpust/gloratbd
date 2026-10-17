@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glorat International Technologies | IT &amp; Supplier Partner in Bangladesh</title>
+<meta name="description" content="Genuine IT equipment, printing supplies, networking, CCTV, UPS and AMC support for businesses in Dhaka and across Bangladesh.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{navy:'#0B2A6F',ink:'#071A45',gold:'#B58A2E',mist:'#F2F5FB',body:'#2B3A55'},fontFamily:{serif:['Fraunces','Georgia','serif'],sans:['Figtree','system-ui','sans-serif']}}}}
+</script>
+<style>
+body{font-family:Figtree,system-ui,sans-serif;color:#2B3A55}
+h1,h2,h3{font-family:Fraunces,Georgia,serif}
+:focus-visible{outline:3px solid #B58A2E;outline-offset:2px}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
+.slide.active{opacity:1;visibility:visible}
+.slide .txt>*{opacity:0;transform:translateY(18px);transition:all .7s ease}
+.slide.active .txt>*{opacity:1;transform:none}
+.slide.active .txt>*:nth-child(2){transition-delay:.12s}.slide.active .txt>*:nth-child(3){transition-delay:.24s}.slide.active .txt>*:nth-child(4){transition-delay:.36s}
+.slide .pic{transform:scale(1.06);transition:transform 6s ease-out}.slide.active .pic{transform:scale(1)}
+#bar{transform-origin:left;transform:scaleX(0)}
+.nav-link.on{color:#0B2A6F;box-shadow:inset 0 -3px 0 #B58A2E}
+.tab.on{background:#0B2A6F;color:#fff;border-color:#0B2A6F}
+.vtab.on{background:#fff;border-color:#B58A2E;box-shadow:0 8px 24px -12px rgba(11,42,111,.35)}
+.panel{display:none}.panel.on{display:block;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#modal.open{display:flex}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.slide .pic{transform:none}}
+</style>
+</head>
+<body class="bg-white antialiased">
+
+<!-- Header -->
+<header id="hdr" class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur transition-shadow">
+  <div class="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
+    <a href="#home" class="flex items-center" aria-label="Glorat International Technologies home"><img src="assets/img/logo.png" alt="Glorat International Technologies" class="h-14 w-auto"></a>
+    <nav class="hidden lg:flex items-center gap-1" aria-label="Main">
+      <a href="#home" class="nav-link px-3 py-2 font-semibold text-sm hover:text-navy">Home</a>
+      <a href="#about" class="nav-link px-3 py-2 font-semibold text-sm hover:text-navy">About</a>
+      <a href="#mission" class="nav-link px-3 py-2 font-semibold text-sm hover:text-navy">Mission &amp; Values</a>
+      <a href="#products" class="nav-link px-3 py-2 font-semibold text-sm hover:text-navy">Products</a>
+      <a href="#services" class="nav-link px-3 py-2 font-semibold text-sm hover:text-navy">Services</a>
+      <a href="#brands" class="nav-link px-3 py-2 font-semibold text-sm hover:text-navy">Brands</a>
+      <a href="#why" class="nav-link px-3 py-2 font-semibold text-sm hover:text-navy">Why Glorat</a>
+      <a href="#contact" class="nav-link px-3 py-2 font-semibold text-sm hover:text-navy">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#contact" class="hidden sm:inline-block bg-navy text-white font-semibold text-sm px-5 py-2.5 rounded-md hover:bg-ink transition">Request a quote</a>
+      <button id="menuBtn" class="lg:hidden p-2 rounded-md border border-slate-200" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path id="menuIcon" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobileNav" class="hidden lg:hidden border-t border-slate-100 bg-white px-5 pb-4" aria-label="Mobile">
+    <a href="#home" class="mnav block py-3 font-semibold border-b border-slate-100">Home</a>
+    <a href="#about" class="mnav block py-3 font-semibold border-b border-slate-100">About</a>
+    <a href="#mission" class="mnav block py-3 font-semibold border-b border-slate-100">Mission &amp; Values</a>
+    <a href="#products" class="mnav block py-3 font-semibold border-b border-slate-100">Products</a>
+    <a href="#services" class="mnav block py-3 font-semibold border-b border-slate-100">Services</a>
+    <a href="#brands" class="mnav block py-3 font-semibold border-b border-slate-100">Brands</a>
+    <a href="#why" class="mnav block py-3 font-semibold border-b border-slate-100">Why Glorat</a>
+    <a href="#contact" class="mnav block py-3 font-semibold">Contact</a>
+  </nav>
+  <div class="h-1 bg-slate-100"><div id="scrollBar" class="h-1 bg-gold w-0"></div></div>
+</header>
+
+<main>
+<!-- Hero slider -->
+<section id="home" class="relative bg-ink text-white pt-20" aria-roledescription="carousel" aria-label="Featured highlights">
+  <div id="slider" class="relative h-[640px] sm:h-[580px] overflow-hidden">
+    <div class="slide active" data-i="0"><div class="max-w-7xl mx-auto px-5 h-full grid lg:grid-cols-2 gap-8 items-center">
+      <div class="txt order-2 lg:order-1 pb-16 lg:pb-0">
+        <p class="text-gold font-semibold mb-3">Technology Today, for a Smarter Tomorrow</p>
+        <h1 class="text-4xl sm:text-5xl font-semibold leading-tight">Your trusted IT and supplier partner</h1>
+        <p class="mt-5 text-slate-200 max-w-lg text-lg">Quality products, reliable service and long-term partnership for businesses of every size.</p>
+        <div class="mt-8 flex flex-wrap gap-3"><a href="#products" class="bg-gold text-ink font-semibold px-6 py-3 rounded-md hover:bg-white transition">Explore products</a><a href="#contact" class="border border-white/40 font-semibold px-6 py-3 rounded-md hover:bg-white/10 transition">Request a quote</a></div>
+      </div>
+      <div class="order-1 lg:order-2 h-48 sm:h-72 lg:h-[400px] rounded-xl overflow-hidden ring-1 ring-white/20"><img class="pic w-full h-full object-cover" src="assets/img/hero-1.jpg" alt="Laptop, monitor and desktop workstation on an office desk"></div>
+    </div></div>
+    <div class="slide" data-i="1"><div class="max-w-7xl mx-auto px-5 h-full grid lg:grid-cols-2 gap-8 items-center">
+      <div class="txt order-2 lg:order-1 pb-16 lg:pb-0">
+        <p class="text-gold font-semibold mb-3">IT products and solutions</p>
+        <h2 class="text-4xl sm:text-5xl font-semibold leading-tight">Computers, printers, networking and CCTV from one supplier</h2>
+        <p class="mt-5 text-slate-200 max-w-lg text-lg">Genuine HP, Dell, Lenovo, Canon and Brother products with manufacturer warranty.</p>
+        <div class="mt-8"><a href="#products" class="bg-gold text-ink font-semibold px-6 py-3 rounded-md hover:bg-white transition inline-block">See the full range</a></div>
+      </div>
+      <div class="order-1 lg:order-2 h-48 sm:h-72 lg:h-[400px] rounded-xl overflow-hidden ring-1 ring-white/20"><img class="pic w-full h-full object-cover" src="assets/img/hero-2.jpg" alt="Printers, switches and CCTV cameras beside a laptop"></div>
+    </div></div>
+    <div class="slide" data-i="2"><div class="max-w-7xl mx-auto px-5 h-full grid lg:grid-cols-2 gap-8 items-center">
+      <div class="txt order-2 lg:order-1 pb-16 lg:pb-0">
+        <p class="text-gold font-semibold mb-3">Digital transformation</p>
+        <h2 class="text-4xl sm:text-5xl font-semibold leading-tight">Cloud, automation and smart IT consulting</h2>
+        <p class="mt-5 text-slate-200 max-w-lg text-lg">We set up cloud infrastructure and integrate enterprise software so your business can grow digitally.</p>
+        <div class="mt-8"><a href="#services" class="bg-gold text-ink font-semibold px-6 py-3 rounded-md hover:bg-white transition inline-block">Our services</a></div>
+      </div>
+      <div class="order-1 lg:order-2 h-48 sm:h-72 lg:h-[400px] rounded-xl overflow-hidden ring-1 ring-white/20"><img class="pic w-full h-full object-cover" src="assets/img/hero-3.jpg" alt="Hand holding a glowing cloud icon with network symbols"></div>
+    </div></div>
+    <div class="slide" data-i="3"><div class="max-w-7xl mx-auto px-5 h-full grid lg:grid-cols-2 gap-8 items-center">
+      <div class="txt order-2 lg:order-1 pb-16 lg:pb-0">
+        <p class="text-gold font-semibold mb-3">AMC and support</p>
+        <h2 class="text-4xl sm:text-5xl font-semibold leading-tight">Quick-response support after the sale</h2>
+        <p class="mt-5 text-slate-200 max-w-lg text-lg">Annual maintenance contracts, on-site visits and remote monitoring keep your systems running.</p>
+        <div class="mt-8"><a href="#contact" class="bg-gold text-ink font-semibold px-6 py-3 rounded-md hover:bg-white transition inline-block">Talk to our team</a></div>
+      </div>
+      <div class="order-1 lg:order-2 h-48 sm:h-72 lg:h-[400px] rounded-xl overflow-hidden ring-1 ring-white/20"><img class="pic w-full h-full object-cover" src="assets/img/hero-4.jpg" alt="Support engineer working on a laptop"></div>
+    </div></div>
+    <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 hidden md:grid place-items-center w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 transition" aria-label="Previous slide"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 hidden md:grid place-items-center w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 transition" aria-label="Next slide"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="absolute bottom-5 inset-x-0 flex justify-center items-center gap-2" id="dots"></div>
+    <div class="absolute bottom-0 inset-x-0 h-1 bg-white/10"><div id="bar" class="h-1 bg-gold"></div></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="rounded-xl overflow-hidden shadow-xl ring-1 ring-slate-200"><img src="assets/img/about.jpg" alt="Printers, laptops, UPS and networking equipment supplied by Glorat" class="w-full" loading="lazy"></div>
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-semibold text-navy">A trusted IT and technology provider in Bangladesh</h2>
+      <p class="mt-5 text-lg leading-relaxed">Glorat International Technologies delivers high-quality products, reliable services and innovative solutions for businesses of all sizes.</p>
+      <p class="mt-3 leading-relaxed">We supply IT equipment, office technology, printing supplies, networking solutions, security systems and end-to-end IT services. Our customer-first approach is built on integrity, professionalism and excellence.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-3" id="focus"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission -->
+<section id="mission" class="py-20 bg-mist scroll-mt-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-navy text-center">What we stand for</h2>
+    <div class="mt-8 flex justify-center gap-2" role="tablist" id="mvTabs">
+      <button class="tab on px-5 py-2.5 rounded-md border border-slate-300 font-semibold text-sm" data-t="m" role="tab">Mission</button>
+      <button class="tab px-5 py-2.5 rounded-md border border-slate-300 font-semibold text-sm" data-t="v" role="tab">Vision</button>
+      <button class="tab px-5 py-2.5 rounded-md border border-slate-300 font-semibold text-sm" data-t="c" role="tab">Core values</button>
+    </div>
+    <div class="mt-8 bg-white rounded-xl p-8 sm:p-10 shadow-sm min-h-[220px]">
+      <div class="panel on" data-p="m"><h3 class="text-2xl font-semibold text-navy">Our mission</h3><p class="mt-4 text-lg leading-relaxed">To provide innovative and reliable IT and technology solutions that empower businesses, enhance productivity and create lasting value for our clients.</p></div>
+      <div class="panel" data-p="v"><h3 class="text-2xl font-semibold text-navy">Our vision</h3><p class="mt-4 text-lg leading-relaxed">To be the most trusted and preferred IT and technology partner in Bangladesh, known for quality products, excellent service and continuous innovation.</p></div>
+      <div class="panel" data-p="c"><h3 class="text-2xl font-semibold text-navy">Our core values</h3><ul class="mt-4 space-y-3" id="values"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="py-20 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl"><h2 class="text-3xl sm:text-4xl font-semibold text-navy">Products and supply portfolio</h2>
+    <p class="mt-4 text-lg">From everyday essentials to advanced technology. Select a category to see what we supply.</p></div>
+    <div id="productGrid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-20 bg-mist scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl"><h2 class="text-3xl sm:text-4xl font-semibold text-navy">Technology solutions and services</h2>
+    <p class="mt-4 text-lg">We help your business operate securely, efficiently and grow digitally.</p></div>
+    <div class="mt-10 grid lg:grid-cols-5 gap-8">
+      <div id="svcTabs" class="lg:col-span-2 space-y-3" role="tablist"></div>
+      <div id="svcPanel" class="lg:col-span-3 bg-white rounded-xl overflow-hidden shadow-sm"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Brands -->
+<section id="brands" class="py-20 scroll-mt-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto"><h2 class="text-3xl sm:text-4xl font-semibold text-navy">Authorized partners of recognized brands</h2>
+    <p class="mt-4 text-lg">Genuine products and reliable performance, category by category.</p></div>
+    <div class="mt-8 flex flex-wrap justify-center gap-2" id="brandTabs"></div>
+    <div id="brandChips" class="mt-8 flex flex-wrap justify-center gap-4 min-h-[88px]"></div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="assure"></div>
+  </div>
+</section>
+
+<!-- Why -->
+<section id="why" class="py-20 bg-ink text-white scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl"><h2 class="text-3xl sm:text-4xl font-semibold">Why work with Glorat?</h2>
+    <p class="mt-4 text-lg text-slate-300">We are more than a supplier. We are your technology partner.</p></div>
+    <div id="whyGrid" class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-5 gap-12">
+    <div class="lg:col-span-2">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-navy">Let's build a smarter future together</h2>
+      <p class="mt-4 text-lg">Whether you need a single product or a complete IT infrastructure, our team is ready to help.</p>
+      <ul class="mt-8 space-y-5">
+        <li class="flex gap-4"><span class="w-11 h-11 shrink-0 grid place-items-center rounded-full bg-mist text-navy"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><p class="font-semibold text-navy">Address</p><p>House-34, Avenue Road, Block-C, Zohurul Islam City, Aftabnagar, Badda, Dhaka-1212</p></div></li>
+        <li class="flex gap-4"><span class="w-11 h-11 shrink-0 grid place-items-center rounded-full bg-mist text-navy"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span><div><p class="font-semibold text-navy">Phone</p><a class="hover:text-navy underline" href="tel:+8801753796235">01753-796235</a></div></li>
+        <li class="flex gap-4"><span class="w-11 h-11 shrink-0 grid place-items-center rounded-full bg-mist text-navy"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><p class="font-semibold text-navy">Email</p><a class="hover:text-navy underline" href="mailto:gloratinternational@gmail.com">gloratinternational@gmail.com</a></div></li>
+        <li class="flex gap-4"><span class="w-11 h-11 shrink-0 grid place-items-center rounded-full bg-mist text-navy"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><div><p class="font-semibold text-navy">Website</p><a class="hover:text-navy underline" href="https://www.gloratbd.com">www.Gloratbd.com</a></div></li>
+      </ul>
+      <a href="https://wa.me/8801753796235" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 bg-[#128C4A] text-white font-semibold px-5 py-3 rounded-md hover:bg-[#0e7039] transition">Chat on WhatsApp</a>
+    </div>
+    <form id="quoteForm" class="lg:col-span-3 bg-mist rounded-xl p-6 sm:p-8 grid sm:grid-cols-2 gap-5" novalidate>
+      <h3 class="sm:col-span-2 text-2xl font-semibold text-navy">Request a quote</h3>
+      <label class="block"><span class="text-sm font-semibold">Full name</span><input name="name" required class="mt-1 w-full rounded-md border border-slate-300 px-4 py-3 bg-white" autocomplete="name"><span class="err text-sm text-red-700 hidden">Enter your name.</span></label>
+      <label class="block"><span class="text-sm font-semibold">Company</span><input name="company" class="mt-1 w-full rounded-md border border-slate-300 px-4 py-3 bg-white" autocomplete="organization"></label>
+      <label class="block"><span class="text-sm font-semibold">Phone</span><input name="phone" required inputmode="tel" class="mt-1 w-full rounded-md border border-slate-300 px-4 py-3 bg-white" autocomplete="tel"><span class="err text-sm text-red-700 hidden">Enter a valid phone number.</span></label>
+      <label class="block"><span class="text-sm font-semibold">Email</span><input name="email" type="email" required class="mt-1 w-full rounded-md border border-slate-300 px-4 py-3 bg-white" autocomplete="email"><span class="err text-sm text-red-700 hidden">Enter a valid email address.</span></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-semibold">Interested in</span><select name="topic" id="topic" class="mt-1 w-full rounded-md border border-slate-300 px-4 py-3 bg-white"></select></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-semibold">Your requirements</span><textarea name="msg" rows="4" required class="mt-1 w-full rounded-md border border-slate-300 px-4 py-3 bg-white"></textarea><span class="err text-sm text-red-700 hidden">Tell us what you need.</span></label>
+      <div class="sm:col-span-2"><button class="bg-navy text-white font-semibold px-7 py-3 rounded-md hover:bg-ink transition">Send request</button><span class="ml-3 text-sm">Opens your email app with the details filled in.</span></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-ink text-slate-300">
+  <div class="max-w-7xl mx-auto px-5 py-12 grid md:grid-cols-3 gap-10">
+    <div><span class="inline-block bg-white rounded-md p-2"><img src="assets/img/logo.png" alt="Glorat International Technologies" class="h-14 w-auto"></span><p class="mt-4 italic">Better solutions for a brighter future.</p></div>
+    <div><h3 class="text-white text-lg font-semibold">Explore</h3><ul class="mt-3 space-y-2"><li><a class="hover:text-white" href="#about">About</a></li><li><a class="hover:text-white" href="#products">Products</a></li><li><a class="hover:text-white" href="#services">Services</a></li><li><a class="hover:text-white" href="#contact">Contact</a></li></ul></div>
+    <div><h3 class="text-white text-lg font-semibold">Authorized and registered</h3><p class="mt-3">Trade License No: TRAD/DNCC/022386/2026<br>Dhaka North City Corporation</p></div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-sm">&copy; <span id="yr"></span> Glorat International Technologies. All rights reserved.</div>
+</footer>
+
+<!-- Product modal -->
+<div id="modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-ink/70" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="bg-white rounded-xl max-w-lg w-full overflow-hidden shadow-2xl">
+    <img id="mImg" src="" alt="" class="w-full h-52 object-cover">
+    <div class="p-6"><h3 id="mTitle" class="text-2xl font-semibold text-navy"></h3><p id="mText" class="mt-3"></p>
+      <div class="mt-6 flex gap-3"><button id="mQuote" class="bg-navy text-white font-semibold px-5 py-2.5 rounded-md hover:bg-ink">Request a quote</button><button id="mClose" class="border border-slate-300 font-semibold px-5 py-2.5 rounded-md hover:bg-mist">Close</button></div></div>
+  </div>
+</div>
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] bg-ink text-white px-5 py-3 rounded-md shadow-lg hidden" role="status"></div>
+<button id="toTop" class="fixed bottom-6 right-5 z-40 w-11 h-11 rounded-full bg-gold text-ink hidden place-items-center shadow-lg" aria-label="Back to top"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg></button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
