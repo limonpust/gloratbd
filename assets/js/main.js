@@ -31,11 +31,22 @@ $(function () {
     ['Teamwork & Collaboration', 'Working together to deliver optimal results for our clients.'],
     ['Sustainable Growth', 'Building long-term value for partners, employees and the community.']
   ];
-  const brands = {
-    'Computer & Laptops': ['HP', 'DELL', 'LENOVO'],
-    'Printing Items': ['HP', 'CANON', 'BROTHER'],
-    'UPS & Power Systems': ['APOLLO', 'KSTAR', 'APC']
-  };
+const BR = IMG + 'brands/';
+const brands = {
+  'Computer & Laptops': [['HP', 'hp.png'], ['DELL', 'dell.png'], ['LENOVO', 'lenovo.png']],
+  'Printing Items': [['HP', 'hp.png'], ['CANON', 'canon.png'], ['BROTHER', 'brother.png']],
+  'UPS & Power Systems': [['APOLLO', 'apollo.png'], ['KSTAR', 'kstar.png'], ['APC', 'apc.png']]
+};
+
+function showBrands(k) {
+  $('.btab').removeClass('on').filter((_, el) => $(el).data('k') === k).addClass('on');
+  $('#brandChips').html(brands[k].map(b => `
+    <div class="w-44 h-28 flex items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm p-5 hover:shadow-lg hover:-translate-y-1 transition">
+      <img src="${BR}${b[1]}" alt="${b[0]}" loading="lazy"
+           class="max-h-full max-w-full object-contain"
+           onerror="this.replaceWith(document.createTextNode(this.alt))">
+    </div>`).join(''));
+}
   const assure = [
     ['Genuine products', '100% authentic products backed by official manufacturer warranties.'],
     ['Authorized partner', 'Direct partnership with global brands for a reliable supply chain.'],
