@@ -48,6 +48,59 @@ const brands = {
         { name: 'APC', image: 'assets/img/apc.png' }
     ]
 };
+
+const brandTabs = document.getElementById('brandTabs');
+const brandChips = document.getElementById('brandChips');
+
+function renderBrands(category) {
+    brandChips.innerHTML = '';
+
+    brands[category].forEach(function (brand) {
+        const card = document.createElement('div');
+
+        card.className =
+            'flex items-center justify-center w-[120px] h-[88px] ' +
+            'bg-white border border-slate-200 rounded-xl p-4 shadow-sm';
+
+        const img = document.createElement('img');
+        img.src = brand.image;
+        img.alt = brand.name;
+        img.title = brand.name;
+        img.className = 'max-w-full max-h-full object-contain';
+        img.loading = 'lazy';
+
+        img.onerror = function () {
+            console.error('Image not found:', img.src);
+        };
+
+        card.appendChild(img);
+        brandChips.appendChild(card);
+    });
+
+    document.querySelectorAll('#brandTabs button').forEach(function (btn) {
+        const active = btn.dataset.category === category;
+
+        btn.className = active
+            ? 'px-5 py-3 rounded-md bg-blue-900 text-white font-medium'
+            : 'px-5 py-3 rounded-md border border-slate-300 bg-white text-blue-900';
+    });
+}
+
+Object.keys(brands).forEach(function (category) {
+    const button = document.createElement('button');
+
+    button.type = 'button';
+    button.dataset.category = category;
+    button.textContent = category;
+
+    button.addEventListener('click', function () {
+        renderBrands(category);
+    });
+
+    brandTabs.appendChild(button);
+});
+
+renderBrands('Computer & Laptops');
   const assure = [
     ['Genuine products', '100% authentic products backed by official manufacturer warranties.'],
     ['Authorized partner', 'Direct partnership with global brands for a reliable supply chain.'],
