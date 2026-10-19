@@ -34,19 +34,8 @@ $(function () {
   
 const brands = {
   'Computer & Laptops': [
-    { name: 'HP',     img: 'assets/img/hp.png' },
-    { name: 'DELL',   img: 'assets/img/dell.png' },
-    { name: 'LENOVO', img: 'assets/img/lenovo.png' }
-  ],
-  'Printing Items': [
-    { name: 'HP',     img: 'assets/img/hp.png' },
-    { name: 'CANON',  img: 'assets/img/canon.png' },
-    { name: 'BROTHER',img: 'assets/img/brother.png' }
-  ],
-  'UPS & Power Systems': [
-    { name: 'APOLLO', img: 'assets/img/apollo.png' },
-    { name: 'KSTAR',  img: 'assets/img/kstar.png' },
-    { name: 'APC',    img: 'assets/img/apc.png' }
+    { name: 'HP',      img: 'assets/img/hp.png' }
+    
   ]
 };
 
