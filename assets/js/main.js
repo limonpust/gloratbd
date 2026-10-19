@@ -31,11 +31,23 @@ $(function () {
     ['Teamwork & Collaboration', 'Working together to deliver optimal results for our clients.'],
     ['Sustainable Growth', 'Building long-term value for partners, employees and the community.']
   ];
-  const brands = {
-    'Computer & Laptops': ['HP', 'DELL', 'LENOVO'],
-    'Printing Items': ['HP', 'CANON', 'BROTHER'],
-    'UPS & Power Systems': ['APOLLO', 'KSTAR', 'APC']
-  };
+const brands = {
+    'Computer & Laptops': [
+        { name: 'HP', image: 'assets/img/hp.png' },
+        { name: 'DELL', image: 'assets/img/dell.png' },
+        { name: 'LENOVO', image: 'assets/img/lenovo.png' }
+    ],
+    'Printing Items': [
+        { name: 'HP', image: 'assets/img/hp.png' },
+        { name: 'CANON', image: 'assets/img/canon.png' },
+        { name: 'BROTHER', image: 'assets/img/brother.png' }
+    ],
+    'UPS & Power Systems': [
+        { name: 'APOLLO', image: 'assets/img/apollo.png' },
+        { name: 'KSTAR', image: 'assets/img/kstar.png' },
+        { name: 'APC', image: 'assets/img/apc.png' }
+    ]
+};
   const assure = [
     ['Genuine products', '100% authentic products backed by official manufacturer warranties.'],
     ['Authorized partner', 'Direct partnership with global brands for a reliable supply chain.'],
