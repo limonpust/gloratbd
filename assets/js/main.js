@@ -31,76 +31,60 @@ $(function () {
     ['Teamwork & Collaboration', 'Working together to deliver optimal results for our clients.'],
     ['Sustainable Growth', 'Building long-term value for partners, employees and the community.']
   ];
+  
 const brands = {
-    'Computer & Laptops': [
-        { name: 'HP', image: 'assets/img/hp.png' },
-        { name: 'DELL', image: 'assets/img/dell.png' },
-        { name: 'LENOVO', image: 'assets/img/lenovo.png' }
-    ],
-    'Printing Items': [
-        { name: 'HP', image: 'assets/img/hp.png' },
-        { name: 'CANON', image: 'assets/img/canon.png' },
-        { name: 'BROTHER', image: 'assets/img/brother.png' }
-    ],
-    'UPS & Power Systems': [
-        { name: 'APOLLO', image: 'assets/img/apollo.png' },
-        { name: 'KSTAR', image: 'assets/img/kstar.png' },
-        { name: 'APC', image: 'assets/img/apc.png' }
-    ]
+  'Computer & Laptops': [
+    { name: 'HP',     img: 'assets/img/hp.png' },
+    { name: 'DELL',   img: 'assets/img/dell.png' },
+    { name: 'LENOVO', img: 'assets/img/lenovo.png' }
+  ],
+  'Printing Items': [
+    { name: 'HP',     img: 'assets/img/hp.png' },
+    { name: 'CANON',  img: 'assets/img/canon.png' },
+    { name: 'BROTHER',img: 'assets/img/brother.png' }
+  ],
+  'UPS & Power Systems': [
+    { name: 'APOLLO', img: 'assets/img/apollo.png' },
+    { name: 'KSTAR',  img: 'assets/img/kstar.png' },
+    { name: 'APC',    img: 'assets/img/apc.png' }
+  ]
 };
 
-const brandTabs = document.getElementById('brandTabs');
-const brandChips = document.getElementById('brandChips');
+const tabsEl  = document.getElementById('brandTabs');
+const chipsEl = document.getElementById('brandChips');
 
-function renderBrands(category) {
-    brandChips.innerHTML = '';
-
-    brands[category].forEach(function (brand) {
-        const card = document.createElement('div');
-
-        card.className =
-            'flex items-center justify-center w-[120px] h-[88px] ' +
-            'bg-white border border-slate-200 rounded-xl p-4 shadow-sm';
-
-        const img = document.createElement('img');
-        img.src = brand.image;
-        img.alt = brand.name;
-        img.title = brand.name;
-        img.className = 'max-w-full max-h-full object-contain';
-        img.loading = 'lazy';
-
-        img.onerror = function () {
-            console.error('Image not found:', img.src);
-        };
-
-        card.appendChild(img);
-        brandChips.appendChild(card);
-    });
-
-    document.querySelectorAll('#brandTabs button').forEach(function (btn) {
-        const active = btn.dataset.category === category;
-
-        btn.className = active
-            ? 'px-5 py-3 rounded-md bg-blue-900 text-white font-medium'
-            : 'px-5 py-3 rounded-md border border-slate-300 bg-white text-blue-900';
-    });
+function renderChips(category) {
+  chipsEl.innerHTML = brands[category].map(b => `
+    <div class="bg-white border border-slate-200 rounded-xl px-6 py-4 flex items-center justify-center w-40 h-24 shadow-sm hover:shadow-md transition">
+      <img src="${b.img}" alt="${b.name}" title="${b.name}"
+           class="max-h-14 max-w-full object-contain" loading="lazy">
+    </div>
+  `).join('');
 }
 
-Object.keys(brands).forEach(function (category) {
-    const button = document.createElement('button');
+function renderTabs(active) {
+  tabsEl.innerHTML = Object.keys(brands).map(cat => `
+    <button data-cat="${cat}"
+      class="px-4 py-2 rounded-full text-sm font-medium border transition
+      ${cat === active
+        ? 'bg-navy text-white border-navy'
+        : 'bg-white text-slate-600 border-slate-200 hover:border-navy'}">
+      ${cat}
+    </button>
+  `).join('');
 
-    button.type = 'button';
-    button.dataset.category = category;
-    button.textContent = category;
-
-    button.addEventListener('click', function () {
-        renderBrands(category);
+  tabsEl.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      renderTabs(btn.dataset.cat);
+      renderChips(btn.dataset.cat);
     });
+  });
+}
 
-    brandTabs.appendChild(button);
-});
+const first = Object.keys(brands)[0];
+renderTabs(first);
+renderChips(first);
 
-renderBrands('Computer & Laptops');
   const assure = [
     ['Genuine products', '100% authentic products backed by official manufacturer warranties.'],
     ['Authorized partner', 'Direct partnership with global brands for a reliable supply chain.'],
