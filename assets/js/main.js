@@ -57,7 +57,8 @@ function renderChips(category) {
   chipsEl.innerHTML = brands[category].map(b => `
     <div class="bg-white border border-slate-200 rounded-xl px-6 py-4 flex items-center justify-center w-40 h-24 shadow-sm hover:shadow-md transition">
       <img src="${b.img}" alt="${b.name}" title="${b.name}"
-           class="max-h-14 max-w-full object-contain" loading="lazy">
+           class="max-h-14 max-w-full object-contain" loading="lazy"
+           onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${b.name}',className:'font-semibold text-slate-600'}))">
     </div>
   `).join('');
 }
